@@ -56,7 +56,7 @@ const Sidebar: React.FC<SiderbarProps> = ({
           >
             {routes.map((item) => (
               <SidebarItem
-                Key={item.label}
+                key={item.label}
                 {...item}
               />
             ))}
@@ -67,6 +67,9 @@ const Sidebar: React.FC<SiderbarProps> = ({
           Song Library
         </Box>
       </div>
+      <main className="h-full flex-1 overflow-y-auto py-2">
+        {children}
+      </main>
     </div>
   );
 }
