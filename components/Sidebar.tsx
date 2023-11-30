@@ -8,33 +8,33 @@ import Box from "./Box";
 import SidebarItem from "./SidebarItem";
 
 interface SiderbarProps {
-	children: React.ReactNode;
+  children: React.ReactNode;
 }
 
 const Sidebar: React.FC<SiderbarProps> = ({
-	children
+  children
 }) => {
-	const pathname = usePathname();
+  const pathname = usePathname();
 
-	const routes = useMemo(() => [
-		{
-			icon: HiHome,
-			label: "Home",
-			active: pathname !== "/search",
-			href: "/",
-		},
-		{
-			icon: BiSearch,
-			label: "Search",
-			active: pathname === "/search",
-			href: "/search",
-		},
-	], []);
+  const routes = useMemo(() => [
+    {
+      icon: HiHome,
+      label: "Home",
+      active: pathname !== "/search",
+      href: "/",
+    },
+    {
+      icon: BiSearch,
+      label: "Search",
+      active: pathname === "/search",
+      href: "/search",
+    },
+  ], []);
 
-	return (
-		<div className="flex h-full">
-			<div
-				className="
+  return (
+    <div className="flex h-full">
+      <div
+        className="
             hidden
             md:flex
             flex-col
@@ -44,31 +44,31 @@ const Sidebar: React.FC<SiderbarProps> = ({
             w-[300px]
             p-2
             "
-			>
-				<Box>
-					<div className="
+      >
+        <Box>
+          <div className="
           flex
           flex-col
           gap-y-4
           px-5
           py-4
           "
-					>
-						{routes.map((item) => (
-							<SidebarItem
-								Key={item.label}
-								{...item}
-							/>
-						))}
+          >
+            {routes.map((item) => (
+              <SidebarItem
+                Key={item.label}
+                {...item}
+              />
+            ))}
 
-					</div>
-				</Box>
-				<Box className="overflow-y-auto h-full">
-					Song Library
-				</Box>
-			</div>
-		</div>
-	);
+          </div>
+        </Box>
+        <Box className="overflow-y-auto h-full">
+          Song Library
+        </Box>
+      </div>
+    </div>
+  );
 }
 
 export default Sidebar;
