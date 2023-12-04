@@ -1,0 +1,28 @@
+Created a database using Supabase which provided me with three URLs that
+I need to connect my front-end to the back-end. This includes the following:
+*********************************
+* NEXT_PUBLIC_SUPABASE_URL      *
+* NEXT_PUBLIC_SUPABASE_ANON_KEY *
+* SUPABASE_SERVICE_ROLE_KEY     *
+*********************************
+
+I created several tables using the SQL editor in Supabase by utilizing the
+Quick Start option for Stripe Subscriptions. This has provided me with several
+tables in which I have added more to.
+
+- customers
+- prices
+- products
+- subscriptions
+- users
+- liked_songs
+- songs
+
+Row Level Security is a feature that enables which users are permitted to perform actions
+such as SELECT/INSERT/UPDATE/DELETE statements on specific rows within tables. This is to enforce security
+and access control within the application.
+
+I have added RLS Policies to "liked_songs" and "songs" to allow certain permissions
+for specific users. An example of this is allowing ONLY authenticated users to add songs.
+
+Supabase gives access to create storages in which I have used to allow users to add/remove/update songs/images
