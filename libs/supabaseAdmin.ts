@@ -58,7 +58,7 @@ const upsertPriceRecord = async (price: Stripe.Price) => {
   console.log(`Price inserted/updated: ${price.id}`);
 }
 
-const createOrRetrieveACustomer = async ({
+const createOrRetrieveCustomer = async ({
   email,
   uuid
 }: {
@@ -175,3 +175,12 @@ const manageSubscriptionStatusChange = async (
     )
   }
 };
+
+export {
+  upsertProductRecord,
+  upsertPriceRecord,
+  createOrRetrieveCustomer,
+  manageSubscriptionStatusChange
+}
+
+
