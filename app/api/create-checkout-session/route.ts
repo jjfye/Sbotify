@@ -22,9 +22,10 @@ export async function POST(
       uuid: user?.id || '',
       email: user?.email || ''
     });
-
+    
+    //@ts-ignore
     const session = await stripe.checkout.sessions.create({
-      payment_method_types:  ['card'],
+      payment_method_types: ['card'],
       billing_address_collection: 'required',
       customer,
       line_items: [
@@ -36,7 +37,7 @@ export async function POST(
       mode: 'subscription',
       allow_promotion_codes: true,
       subscription_data: {
-        trial_period_days: 7,
+        trial_from_plan: true,
         metadata
       },
       success_url: `${getURL()}/account`,
