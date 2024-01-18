@@ -6,10 +6,10 @@ const Error = () => {
   return (
     <Box className="h-full flex items-center justify-center">
       <div className="text-neutral-400">
-        Oops! Something's went wrong...
+        Oops! Something went wrong...
       </div>
     </Box>
-  )
+  );
 };
 
 export default Error;
